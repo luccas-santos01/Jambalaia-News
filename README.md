@@ -1,1 +1,1 @@
-# LatestNews-Model
+LatestNews-Model
