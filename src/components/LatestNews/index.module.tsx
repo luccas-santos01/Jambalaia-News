@@ -2,21 +2,6 @@ import styles from "./LatestNews.module.css";
 import useFetchIBGENews from "../../hooks/useFetchIBGENews";
 import moment from "moment";
 
-interface NewsItem {
-  id: number;
-  tipo: string;
-  titulo: string;
-  data_publicacao: string;
-  link: string;
-  imagens: string;
-  resumo: string;
-  [key: string]: unknown;
-}
-
-interface NewsData {
-  items: NewsItem[];
-}
-
 function LatestNews() {
   const { data, loading } = useFetchIBGENews();
 
@@ -24,8 +9,7 @@ function LatestNews() {
     return <div>Carregando...</div>;
   }
 
-  const newsData: NewsData = data;
-  const latestNews = newsData.items[0];
+  const latestNews = data.items[0];
 
   if (!latestNews || !latestNews.data_publicacao) {
     return <div>Nenhuma notícia disponível</div>;

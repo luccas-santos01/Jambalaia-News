@@ -7,7 +7,6 @@
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
-  color: #fff;
 }
 
 .title {
@@ -32,14 +31,15 @@
 
 .link button {
   background-color: #007BFF;
-    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .link button:hover {
   background-color: #0056b3;
+  font-weight: bold;
 }
