@@ -1,10 +1,13 @@
 import { useState } from "react";
 import useFetchIBGENews from "../../hooks/useFetchIBGENews";
+import useFavorites from "../../hooks/useFavorites";
 import styles from "./NewsSection.module.css";
 import moment from "moment";
+import { IoIosHeartEmpty, IoMdHeart } from "react-icons/io";
 
 function NewsSection() {
   const { data, loading } = useFetchIBGENews();
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
   const [visible, setVisible] = useState(12);
 
   if (loading) {
@@ -16,6 +19,14 @@ function NewsSection() {
   }
 
   const newsItems = data.items.slice(1, visible + 1);
+
+  const handleFavoriteClick = (id: number) => {
+    if (isFavorite(id)) {
+      removeFavorite(id);
+    } else {
+      addFavorite(id);
+    }
+  };
 
   return (
     <div>
@@ -34,6 +45,9 @@ function NewsSection() {
               <p>{news.introducao}</p>
               <button onClick={() => window.open(news.link, "_blank")}>
                 Ler Notícia
+              </button>
+              <button onClick={() => handleFavoriteClick(news.id)}>
+                {isFavorite(news.id) ? <IoMdHeart /> : <IoIosHeartEmpty />}
               </button>
             </div>
           );
