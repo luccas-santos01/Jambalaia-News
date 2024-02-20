@@ -18,7 +18,6 @@
 .image {
   width: 100%;
   height: auto;
-  margin-bottom: 20px;
 }
 
 .link {
@@ -42,4 +41,24 @@
 .link button:hover {
   background-color: #0056b3;
   font-weight: bold;
+}
+
+.contentContainer {
+  display: flex;
+}
+
+.imageContainer {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.favoriteButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }

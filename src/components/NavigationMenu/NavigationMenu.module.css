@@ -2,15 +2,18 @@
   display: flex;
   justify-content: start;
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: gray;
+  margin-left: 20px;
 }
 
 .botaoMenu {
   background-color: transparent;
-  color: black;
+  color: white;
   border: none;
   cursor: pointer;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .botaoMenu:hover {

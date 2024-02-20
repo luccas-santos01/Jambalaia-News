@@ -40,27 +40,38 @@ function LatestNews() {
 
   return (
     <div className={styles.card}>
-      <h1>Notícia mais recente</h1>
-      <img
-        className={styles.image}
-        src={fullImageUrl}
-        alt={latestNews.titulo}
-      />
-      <div className={styles.textContainer}>
-        <h2 className={styles.title}>{latestNews.titulo}</h2>
-        <p>{latestNews.resumo}</p>
-        <p>{timeSincePublication} dia atrás</p>
-        <button onClick={handleFavoriteClick}>
-          {isFavorite(latestNews.id) ? <IoMdHeart /> : <IoIosHeartEmpty />}
-        </button>
-        <a
-          className={styles.link}
-          href={latestNews.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button>Leia a notícia aqui</button>
-        </a>
+      <h3>Notícia mais recente</h3>
+      <div className={styles.contentContainer}>
+        <div className={styles.imageContainer}>
+          <img
+            className={styles.image}
+            src={fullImageUrl}
+            alt={latestNews.titulo}
+          />
+        </div>
+        <div className={styles.textContainer}>
+          <h2 className={styles.title}>{latestNews.titulo}</h2>
+          <p>{latestNews.resumo}</p>
+          <p>{timeSincePublication} dia atrás</p>
+          <button
+            className={styles.favoriteButton}
+            onClick={handleFavoriteClick}
+          >
+            {isFavorite(latestNews.id) ? (
+              <IoMdHeart size={24} />
+            ) : (
+              <IoIosHeartEmpty size={24} />
+            )}
+          </button>
+          <a
+            className={styles.link}
+            href={latestNews.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>Leia a notícia aqui</button>
+          </a>
+        </div>
       </div>
     </div>
   );
