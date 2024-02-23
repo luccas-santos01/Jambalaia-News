@@ -2,18 +2,18 @@ import { useState, useEffect } from "react";
 
 export interface News {
   id: number;
-  tipo: string;
-  titulo: string;
-  introducao: string;
-  data_publicacao: string;
-  produto_id: number;
-  produtos: string;
-  editorias: string;
-  imagens: string;
-  produtos_relacionados: string;
-  destaque: boolean;
+  type: string;
+  title: string;
+  introduction: string;
+  published_date: string;
+  product_id: number;
+  product: string;
+  editorials: string;
+  images: string;
+  related_products: string;
+  emphasis: boolean;
   link: string;
-  resumo: string;
+  resume: string;
 }
 interface NewsData {
   count: number;

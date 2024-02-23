@@ -20,7 +20,6 @@
 
 .imageContainer {
   flex: 1.5;
-  /* Aumenta o tamanho do contêiner da imagem */
   height: auto;
   overflow: hidden;
   margin-right: 20px;
@@ -33,7 +32,6 @@
 
 .textContainer {
   flex: 1;
-  /* Mantém o tamanho do contêiner de texto */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,7 +48,7 @@
 .favoriteButton {
   background: none;
   border: none;
-  color: #007BFF;
+  color: orange;
   cursor: pointer;
   font-size: 20px;
   margin-top: 10px;

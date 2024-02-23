@@ -8,6 +8,7 @@
   justify-content: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   padding: 0 20px;
+  margin: 0;
 }
 
 .logo {
@@ -18,7 +19,7 @@
 }
 
 .title {
-  font-size: 34px;
+  font-size: 44px;
   color: white;
   font-weight: bold;
   font-family: "Roboto", sans-serif;

@@ -14,17 +14,17 @@ function LatestNews() {
 
   const latestNews = data.items[0];
 
-  if (!latestNews || !latestNews.data_publicacao) {
+  if (!latestNews || !latestNews.published_date) {
     return <div>Nenhuma notícia disponível</div>;
   }
 
   const publicationDate = moment(
-    latestNews.data_publicacao,
+    latestNews.published_date,
     "DD/MM/YYYY HH:mm:ss"
   );
   const timeSincePublication = moment().diff(publicationDate, "days");
 
-  const imagensObj = JSON.parse(latestNews.imagens);
+  const imagensObj = JSON.parse(latestNews.images);
 
   const imageUrl = imagensObj.image_fulltext.replace(/\\/g, "");
 
@@ -45,18 +45,18 @@ function LatestNews() {
           <img
             className={styles.image}
             src={fullImageUrl}
-            alt={latestNews.titulo}
+            alt={latestNews.title}
           />
         </div>
         <div className={styles.textContainer}>
-          <h3>Notícia mais recente</h3>
-          <h2 className={styles.title}>{latestNews.titulo}</h2>
+          <h4>Notícia mais recente</h4>
+          <h2 className={styles.title}>{latestNews.title}</h2>
+          <p>{timeSincePublication} dias atrás</p>
           <p>
-            {latestNews.introducao
-              ? latestNews.introducao
+            {latestNews.introduction
+              ? latestNews.introduction
               : "Nenhum resumo disponível"}
           </p>
-          <p>{timeSincePublication} dia atrás</p>
           <div className={styles.buttonsContainer}>
             <a
               className={styles.link}

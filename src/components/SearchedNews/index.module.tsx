@@ -25,7 +25,7 @@ const SearchedNews: React.FC<NewsComponentProps> = ({ searchValue }) => {
   if (loading || !data) return <div>Carregando...</div>;
 
   const newsItems = data.items.filter((news) =>
-    news.titulo.toLowerCase().includes(searchValue.toLowerCase())
+    news.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   return (
@@ -33,16 +33,16 @@ const SearchedNews: React.FC<NewsComponentProps> = ({ searchValue }) => {
       <div className={styles.newsGrid}>
         {newsItems.slice(0, visible).map((news, index) => {
           const publicationDate = moment(
-            news.data_publicacao,
+            news.published_date,
             "DD/MM/YYYY HH:mm:ss"
           );
           const timeSincePublication = moment().diff(publicationDate, "days");
 
           return (
             <div key={index} className={styles.newsCard}>
-              <h2>{news.titulo}</h2>
+              <h2>{news.title}</h2>
               <p>Publicado há {timeSincePublication} dias</p>
-              <p>{news.introducao}</p>
+              <p>{news.introduction}</p>
               <div className={styles.buttonWrapper}>
                 <button
                   onClick={() => window.open(news.link, "_blank")}

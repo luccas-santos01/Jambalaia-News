@@ -18,7 +18,7 @@ function NoticeSection() {
     return <div>Nenhum dado encontrado</div>;
   }
 
-  const newsItems = data.items.filter((item) => item.tipo === "Notícia");
+  const newsItems = data.items.filter((item) => item.type === "Notícia");
 
   const handleFavoriteClick = (id: number) => {
     if (isFavorite(id)) {
@@ -33,16 +33,16 @@ function NoticeSection() {
       <div className={styles.newsGrid}>
         {newsItems.slice(0, visible).map((news, index) => {
           const publicationDate = moment(
-            news.data_publicacao,
+            news.published_date,
             "DD/MM/YYYY HH:mm:ss"
           );
           const timeSincePublication = moment().diff(publicationDate, "days");
 
           return (
             <div key={index} className={styles.newsCard}>
-              <h2>{news.titulo}</h2>
+              <h2>{news.title}</h2>
               <p>Publicado há {timeSincePublication} dias</p>
-              <p>{news.introducao}</p>
+              <p>{news.introduction}</p>
               <div className={styles.buttonWrapper}>
                 <button
                   onClick={() => window.open(news.link, "_blank")}
