@@ -24,20 +24,20 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
         Mais recentes
       </button>
       <button
-        onClick={() => handleButtonClick("Release")}
+        onClick={() => handleButtonClick("Releases")}
         className={`${styles.botaoMenu} ${
-          activeButton === "Release" ? styles.active : ""
+          activeButton === "Releases" ? styles.active : ""
         }`}
       >
-        Release
+        Releases
       </button>
       <button
-        onClick={() => handleButtonClick("Notícia")}
+        onClick={() => handleButtonClick("Notícias")}
         className={`${styles.botaoMenu} ${
           activeButton === "Notícia" ? styles.active : ""
         }`}
       >
-        Notícia
+        Notícias
       </button>
       <button
         onClick={() => handleButtonClick("Favoritas")}

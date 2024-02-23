@@ -4,10 +4,20 @@ import LatestNews from "./components/LatestNews/index.module";
 import NavigationMenu from "./components/NavigationMenu/index.module";
 import NewsSection from "./components/NewsSection/index.module";
 import FavoriteSection from "./components/FavoriteSection/index.module";
-import { useState } from 'react';
+import NoticeSection from "./components/NoticeSection/index.module";
+import { useState } from "react";
 
 function App() {
   const [activeButton, setActiveButton] = useState("Mais recentes");
+
+  let content;
+  if (activeButton === "Favoritas") {
+    content = <FavoriteSection />;
+  } else if (activeButton === "Notícias") {
+    content = <NoticeSection />;
+  } else {
+    content = <NewsSection />;
+  }
 
   return (
     <div>
@@ -17,7 +27,7 @@ function App() {
         activeButton={activeButton}
         setActiveButton={setActiveButton}
       />
-      {activeButton === "Favoritas" ? <FavoriteSection /> : <NewsSection />}
+      {content}
     </div>
   );
 }
