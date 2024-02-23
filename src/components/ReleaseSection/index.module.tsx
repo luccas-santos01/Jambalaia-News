@@ -18,7 +18,7 @@ function ReleaseSection() {
     return <div>Nenhum dado encontrado</div>;
   }
 
-  const newsItems = data.items.filter((item) => item.type === "Release");
+  const newsItems = data.items.filter((item) => item.tipo === "Release");
 
   const handleFavoriteClick = (id: number) => {
     if (isFavorite(id)) {
@@ -33,16 +33,16 @@ function ReleaseSection() {
       <div className={styles.releaseGrid}>
         {newsItems.slice(0, visible).map((news, index) => {
           const publicationDate = moment(
-            news.published_date,
+            news.data_publicacao,
             "DD/MM/YYYY HH:mm:ss"
           );
           const timeSincePublication = moment().diff(publicationDate, "days");
 
           return (
             <div key={index} className={styles.releaseCard}>
-              <h2>{news.title}</h2>
+              <h2>{news.titulo}</h2>
               <p>Publicado há {timeSincePublication} dias</p>
-              <p>{news.introduction}</p>
+              <p>{news.introducao}</p>
               <div className={styles.buttonWrapper}>
                 <button
                   onClick={() => window.open(news.link, "_blank")}

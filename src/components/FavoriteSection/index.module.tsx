@@ -26,11 +26,11 @@ function FavoriteSection() {
         .filter((news: News) => favorites.includes(news.id))
         .map((news: News) => ({
           id: news.id,
-          image_url: news.images,
-          title: news.title,
-          description: news.introduction,
+          image_url: news.imagens,
+          title: news.titulo,
+          description: news.introducao,
           url: news.link,
-          published_at: news.published_date,
+          published_at: news.data_publicacao,
         }));
       setFavoriteNews(favoriteNewsData);
     }
