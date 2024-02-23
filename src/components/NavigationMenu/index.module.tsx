@@ -1,9 +1,14 @@
-import { useState } from "react";
 import styles from "./NavigationMenu.module.css";
 
-const NavigationMenu = () => {
-  const [activeButton, setActiveButton] = useState("Mais recentes");
+interface NavigationMenuProps {
+  activeButton: string;
+  setActiveButton: (value: string) => void;
+}
 
+const NavigationMenu: React.FC<NavigationMenuProps> = ({
+  activeButton,
+  setActiveButton,
+}) => {
   const handleButtonClick = (buttonName: string) => {
     setActiveButton(buttonName);
   };

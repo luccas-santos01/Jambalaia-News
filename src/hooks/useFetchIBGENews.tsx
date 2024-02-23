@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-interface News {
+export interface News {
   id: number;
   tipo: string;
   titulo: string;
