@@ -6,13 +6,22 @@ import NewsSection from "./components/NewsSection/index.module";
 import FavoriteSection from "./components/FavoriteSection/index.module";
 import NoticeSection from "./components/NoticeSection/index.module";
 import ReleaseSection from "./components/ReleaseSection/index.module";
+import SearchBar from "./components/SearchBar/index.module";
+import SearchedNews from './components/SearchedNews/index.module';
 import { useState } from "react";
 
 function App() {
   const [activeButton, setActiveButton] = useState("Mais recentes");
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleInputChange = (inputValue: string) => {
+    setSearchValue(inputValue);
+  };
 
   let content;
-  if (activeButton === "Favoritas") {
+  if (searchValue !== "") {
+    content = <SearchedNews searchValue={searchValue} />;
+  } else if (activeButton === "Favoritas") {
     content = <FavoriteSection />;
   } else if (activeButton === "Notícias") {
     content = <NoticeSection />;
@@ -30,6 +39,7 @@ function App() {
         activeButton={activeButton}
         setActiveButton={setActiveButton}
       />
+      <SearchBar onInputChange={handleInputChange} />
       {content}
     </div>
   );

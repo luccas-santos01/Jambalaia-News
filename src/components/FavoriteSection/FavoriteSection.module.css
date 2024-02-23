@@ -31,8 +31,28 @@
   font-weight: bold;
   margin-top: auto;
   width: 20%;
+  color: white;
 }
 
 .readNewsButton:hover {
+  background-color: #0056b3;
+}
+
+.showMoreButton {
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin: 20px auto;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.showMoreButton:hover {
   background-color: #0056b3;
 }

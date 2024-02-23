@@ -6,7 +6,8 @@
   border-radius: 20px;
   padding: 20px;
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 1200px;
+  border-radius: 20px;
 }
 
 .title {
@@ -36,6 +37,7 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
+    color: white;
 }
 
 .link button:hover {
@@ -48,12 +50,12 @@
 }
 
 .imageContainer {
-  flex: 1;
+  flex: 2;
   margin-right: 20px;
 }
 
 .textContainer {
-  flex: 1;
+  flex: 1.5;
 }
 
 .favoriteButton {

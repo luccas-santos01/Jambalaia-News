@@ -40,7 +40,6 @@ function LatestNews() {
 
   return (
     <div className={styles.card}>
-      <h3>Notícia mais recente</h3>
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
           <img
@@ -50,8 +49,13 @@ function LatestNews() {
           />
         </div>
         <div className={styles.textContainer}>
+          <h3>Notícia mais recente</h3>
           <h2 className={styles.title}>{latestNews.titulo}</h2>
-          <p>{latestNews.resumo}</p>
+          <p>
+            {latestNews.introducao
+              ? latestNews.introducao
+              : "Nenhum resumo disponível"}
+          </p>
           <p>{timeSincePublication} dia atrás</p>
           <button
             className={styles.favoriteButton}
