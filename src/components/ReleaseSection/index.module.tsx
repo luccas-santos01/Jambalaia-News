@@ -30,7 +30,7 @@ function ReleaseSection() {
 
   return (
     <div>
-      <div className={styles.newsGrid}>
+      <div className={styles.releaseGrid}>
         {newsItems.slice(0, visible).map((news, index) => {
           const publicationDate = moment(
             news.data_publicacao,
@@ -39,26 +39,28 @@ function ReleaseSection() {
           const timeSincePublication = moment().diff(publicationDate, "days");
 
           return (
-            <div key={index} className={styles.newsCard}>
+            <div key={index} className={styles.releaseCard}>
               <h2>{news.titulo}</h2>
               <p>Publicado há {timeSincePublication} dias</p>
               <p>{news.introducao}</p>
-              <button
-                onClick={() => window.open(news.link, "_blank")}
-                className={styles.readNewsButton}
-              >
-                Ler Notícia
-              </button>
-              <button
-                onClick={() => handleFavoriteClick(news.id)}
-                className={styles.favoriteButton}
-              >
-                {isFavorite(news.id) ? (
-                  <IoMdHeart size={24} />
-                ) : (
-                  <IoIosHeartEmpty size={24} />
-                )}
-              </button>
+              <div className={styles.buttonWrapper}>
+                <button
+                  onClick={() => window.open(news.link, "_blank")}
+                  className={styles.readReleaseButton}
+                >
+                  Ler Notícia
+                </button>
+                <button
+                  onClick={() => handleFavoriteClick(news.id)}
+                  className={styles.favoriteButton}
+                >
+                  {isFavorite(news.id) ? (
+                    <IoMdHeart size={24} />
+                  ) : (
+                    <IoIosHeartEmpty size={24} />
+                  )}
+                </button>
+              </div>
             </div>
           );
         })}

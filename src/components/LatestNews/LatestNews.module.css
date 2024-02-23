@@ -1,19 +1,29 @@
-.card {
+.contentContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  border: none;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 1200px;
-  border-radius: 20px;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.card {
+  border: 3px solid;
+  border-image-source: linear-gradient(45deg, #007BFF, #0056b3);
+  border-image-slice: 1;
+  border-radius: 5px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  width: 70%;
+  max-width: 1500px;
+}
+
+.imageContainer {
+  flex: 1.5;
+  /* Aumenta o tamanho do contêiner da imagem */
+  height: auto;
+  overflow: hidden;
+  margin-right: 20px;
 }
 
 .image {
@@ -21,46 +31,54 @@
   height: auto;
 }
 
-.link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  text-decoration: none;
-}
-
-.link button {
-  background-color: #007BFF;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-}
-
-.link button:hover {
-  background-color: #0056b3;
-  font-weight: bold;
-}
-
-.contentContainer {
-  display: flex;
-}
-
-.imageContainer {
-  flex: 2;
-  margin-right: 20px;
-}
-
 .textContainer {
-  flex: 1.5;
+  flex: 1;
+  /* Mantém o tamanho do contêiner de texto */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-top: 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 .favoriteButton {
   background: none;
   border: none;
-  padding: 0;
+  color: #007BFF;
   cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.link {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.link button {
+  background-color: #007BFF;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.link button:hover {
+  background-color: #0056b3;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

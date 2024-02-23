@@ -57,24 +57,26 @@ function LatestNews() {
               : "Nenhum resumo disponível"}
           </p>
           <p>{timeSincePublication} dia atrás</p>
-          <button
-            className={styles.favoriteButton}
-            onClick={handleFavoriteClick}
-          >
-            {isFavorite(latestNews.id) ? (
-              <IoMdHeart size={24} />
-            ) : (
-              <IoIosHeartEmpty size={24} />
-            )}
-          </button>
-          <a
-            className={styles.link}
-            href={latestNews.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button>Leia a notícia aqui</button>
-          </a>
+          <div className={styles.buttonsContainer}>
+            <a
+              className={styles.link}
+              href={latestNews.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button>Leia a notícia aqui</button>
+            </a>
+            <button
+              className={styles.favoriteButton}
+              onClick={handleFavoriteClick}
+            >
+              {isFavorite(latestNews.id) ? (
+                <IoMdHeart size={24} />
+              ) : (
+                <IoIosHeartEmpty size={24} />
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </div>

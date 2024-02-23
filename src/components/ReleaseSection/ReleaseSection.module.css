@@ -1,40 +1,19 @@
-.newsGrid {
+.releaseGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.newsCard {
+.releaseCard {
   border: 1px solid #ccc;
-  padding: 10px;
-  margin-left: 20px;
-}
-
-.showMoreButton {
-  margin-top: 20px;
-}
-
-.favoriteButton {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.readNewsButton {
-  background-color: #007BFF;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-}
-
-.readNewsButton:hover {
-  background-color: #0056b3;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .showMoreButton {
@@ -54,4 +33,36 @@
 
 .showMoreButton:hover {
   background-color: #0056b3;
+}
+
+.favoriteButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #007BFF;
+  font-size: 24px;
+}
+
+.readReleaseButton {
+  background-color: #007BFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.readReleaseButton:hover {
+  background-color: #0056b3;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }

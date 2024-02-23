@@ -5,7 +5,7 @@ import useFavorites from "../../hooks/useFavorites";
 import styles from "./NoticeSection.module.css";
 import { IoMdHeart, IoIosHeartEmpty } from "react-icons/io";
 
-function NoticeSection  () {
+function NoticeSection() {
   const { data, loading } = useFetchIBGENews();
   const { addFavorite, removeFavorite, isFavorite } = useFavorites();
   const [visible, setVisible] = useState(12);
@@ -43,22 +43,24 @@ function NoticeSection  () {
               <h2>{news.titulo}</h2>
               <p>Publicado há {timeSincePublication} dias</p>
               <p>{news.introducao}</p>
-              <button
-                onClick={() => window.open(news.link, "_blank")}
-                className={styles.readNewsButton}
-              >
-                Ler Notícia
-              </button>
-              <button
-                onClick={() => handleFavoriteClick(news.id)}
-                className={styles.favoriteButton}
-              >
-                {isFavorite(news.id) ? (
-                  <IoMdHeart size={24} />
-                ) : (
-                  <IoIosHeartEmpty size={24} />
-                )}
-              </button>
+              <div className={styles.buttonWrapper}>
+                <button
+                  onClick={() => window.open(news.link, "_blank")}
+                  className={styles.readNewsButton}
+                >
+                  Ler Notícia
+                </button>
+                <button
+                  onClick={() => handleFavoriteClick(news.id)}
+                  className={styles.favoriteButton}
+                >
+                  {isFavorite(news.id) ? (
+                    <IoMdHeart size={24} />
+                  ) : (
+                    <IoIosHeartEmpty size={24} />
+                  )}
+                </button>
+              </div>
             </div>
           );
         })}

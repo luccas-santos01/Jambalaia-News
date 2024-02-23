@@ -43,22 +43,24 @@ function NewsSection() {
               <h2>{news.titulo}</h2>
               <p>Publicado há {timeSincePublication} dias</p>
               <p>{news.introducao}</p>
-              <button
-                onClick={() => window.open(news.link, "_blank")}
-                className={styles.readNewsButton}
-              >
-                Ler Notícia
-              </button>
-              <button
-                onClick={() => handleFavoriteClick(news.id)}
-                className={styles.favoriteButton}
-              >
-                {isFavorite(news.id) ? (
-                  <IoMdHeart size={24} />
-                ) : (
-                  <IoIosHeartEmpty size={24} />
-                )}
-              </button>
+              <div className={styles.buttonWrapper}>
+                <button
+                  onClick={() => window.open(news.link, "_blank")}
+                  className={styles.readNewsButton}
+                >
+                  Ler Notícia
+                </button>
+                <button
+                  onClick={() => handleFavoriteClick(news.id)}
+                  className={styles.favoriteButton}
+                >
+                  {isFavorite(news.id) ? (
+                    <IoMdHeart size={24} />
+                  ) : (
+                    <IoIosHeartEmpty size={24} />
+                  )}
+                </button>
+              </div>
             </div>
           );
         })}
