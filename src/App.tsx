@@ -5,6 +5,7 @@ import NavigationMenu from "./components/NavigationMenu/index.module";
 import NewsSection from "./components/NewsSection/index.module";
 import FavoriteSection from "./components/FavoriteSection/index.module";
 import NoticeSection from "./components/NoticeSection/index.module";
+import ReleaseSection from "./components/ReleaseSection/index.module";
 import { useState } from "react";
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
     content = <FavoriteSection />;
   } else if (activeButton === "Notícias") {
     content = <NoticeSection />;
+  } else if (activeButton === "Releases") {
+    content = <ReleaseSection />;
   } else {
     content = <NewsSection />;
   }
