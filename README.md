@@ -4,6 +4,8 @@
 
 Este projeto é uma aplicação de página de notícias que utiliza a API gratuita do IBGE para buscar informações. A página principal destaca a notícia mais recente. Além disso, a aplicação possui um sistema de favoritos, permitindo que os usuários marquem as notícias de seu interesse. As notícias favoritas são armazenadas localmente, possibilitando que o usuário as acesse posteriormente.
 
+A aplicação foi testada para reduzir a possibilidade de problemas de funcionamento, garantindo uma experiência de usuário suave e confiável.
+
 A barra de navegação oferece quatro filtros: notícias mais recentes (padrão), releases, notícias e uma opção para exibir todas as notícias marcadas como favoritas. Há também um campo de pesquisa por título para facilitar a busca por notícias específicas.
 
 ## Estrutura do Projeto
