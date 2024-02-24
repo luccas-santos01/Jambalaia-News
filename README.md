@@ -1,4 +1,4 @@
-# Jambalia News
+# Jambalaia News
 
 ## Descrição
 
