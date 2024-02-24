@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import useFetchIBGENews, { News } from "../../hooks/useFetchIBGENews";
-import useFavorites from "../../hooks/useFavorites";
 import styles from "./FavoriteSection.module.css";
 import moment from "moment";
 
@@ -15,7 +14,6 @@ interface NewsItem {
 
 function FavoriteSection() {
   const { data, loading } = useFetchIBGENews();
-  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
   const [visible, setVisible] = useState(12);
   const [favoriteNews, setFavoriteNews] = useState<NewsItem[]>([]);
 
@@ -46,14 +44,6 @@ function FavoriteSection() {
 
   const newsItems = favoriteNews.slice(0, visible);
 
-  const handleFavoriteClick = (id: number) => {
-    if (isFavorite(id)) {
-      removeFavorite(id);
-    } else {
-      addFavorite(id);
-    }
-  };
-
   return (
     <div>
       <div className={styles.newsGrid}>
@@ -75,10 +65,6 @@ function FavoriteSection() {
               >
                 Ler Notícia
               </button>
-              <button
-                onClick={() => handleFavoriteClick(news.id)}
-                className={styles.favoriteButton}
-              ></button>
             </div>
           );
         })}

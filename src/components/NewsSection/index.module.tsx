@@ -21,11 +21,7 @@ function NewsSection() {
   const newsItems = data.items.slice(1, visible + 1);
 
   const handleFavoriteClick = (id: number) => {
-    if (isFavorite(id)) {
-      removeFavorite(id);
-    } else {
-      addFavorite(id);
-    }
+    isFavorite(id) ? removeFavorite(id) : addFavorite(id);
   };
 
   return (
@@ -53,6 +49,7 @@ function NewsSection() {
                 <button
                   onClick={() => handleFavoriteClick(news.id)}
                   className={styles.favoriteButton}
+                  data-testid="favorite-button"
                 >
                   {isFavorite(news.id) ? (
                     <IoMdHeart size={24} />
