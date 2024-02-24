@@ -2,20 +2,20 @@ import { useState, useEffect } from "react";
 
 export interface News {
   id: number;
-  type: string;
-  title: string;
-  introduction: string;
-  published_date: string;
-  product_id: number;
-  product: string;
-  editorials: string;
-  images: string;
-  related_products: string;
-  emphasis: boolean;
+  tipo: string;
+  titulo: string;
+  introducao: string;
+  data_publicacao: string;
+  produto_id: number;
+  produtos: string;
+  editorias: string;
+  imagens: string;
+  produtos_relacionados: string;
+  destaque: boolean;
   link: string;
-  resume: string;
+  resumo: string;
 }
-interface NewsData {
+export interface NewsData {
   count: number;
   page: number;
   totalPages: number;
