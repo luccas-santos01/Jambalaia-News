@@ -1,0 +1,21 @@
+.menuNavegacao {
+  display: flex;
+  justify-content: start;
+  padding: 20px;
+  background-color: gray;
+  margin-left: 20px;
+}
+
+.botaoMenu {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.botaoMenu:hover {
+  color: #007BFF;
+}
