@@ -34,7 +34,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
       <button
         onClick={() => handleButtonClick("Notícias")}
         className={`${styles.botaoMenu} ${
-          activeButton === "Notícia" ? styles.active : ""
+          activeButton === "Notícias" ? styles.active : ""
         }`}
       >
         Notícias

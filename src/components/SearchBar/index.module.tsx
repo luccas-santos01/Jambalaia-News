@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styles from './SearchBar.module.css';
+import styles from "./SearchBar.module.css";
+import searchIcon from "../../assets/magnifying-glass.png";
 
 interface SearchBarProps {
   onInputChange: (inputValue: string) => void;
@@ -10,17 +11,28 @@ const SearchBar: React.FC<SearchBarProps> = ({ onInputChange }) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
-    onInputChange(event.target.value);
+  };
+
+  const handleSearchClick = () => {
+    onInputChange(inputValue);
   };
 
   return (
-    <input
-      type="text"
-      value={inputValue}
-      onChange={handleChange}
-      placeholder="Buscar notícias..."
-      className={styles.searchBar}
-    />
+    <div className={styles.searchBarContainer}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleChange}
+        placeholder="Buscar notícias..."
+        className={styles.searchBar}
+      />
+      <img
+        src={searchIcon}
+        alt="Buscar"
+        onClick={handleSearchClick}
+        className={styles.searchButton}
+      />
+    </div>
   );
 };
 

@@ -1,9 +1,13 @@
-.searchBar {
+.searchBarContainer {
+  position: relative;
   width: 30%;
-  height: 40px;
-  padding: 10px;
   margin: 20px auto;
-  display: block;
+}
+
+.searchBar {
+  width: 100%;
+  height: 40px;
+  padding: 10px 40px 10px 20px;
   border: none;
   border-radius: 20px;
   background-color: #f1f1f1;
@@ -18,4 +22,36 @@
 
 .searchBar::placeholder {
   color: #888;
+}
+
+.searchButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 1024px) {
+  .searchBarContainer {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBarContainer {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchBarContainer {
+    width: 90%;
+  }
 }

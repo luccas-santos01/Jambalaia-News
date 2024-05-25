@@ -1,16 +1,9 @@
 import { useState, useEffect } from "react";
-import useFetchIBGENews, { News } from "../../hooks/useFetchIBGENews";
+import useFetchIBGENews from "../../hooks/useFetchIBGENews";
+import { News } from "../../types/news";
 import styles from "./FavoriteSection.module.css";
 import moment from "moment";
-
-interface NewsItem {
-  id: number;
-  image_url: string;
-  title: string;
-  description: string;
-  url: string;
-  published_at: string;
-}
+import { NewsItem } from "../../types/news";
 
 function FavoriteSection() {
   const { data, loading } = useFetchIBGENews();
@@ -53,9 +46,19 @@ function FavoriteSection() {
             "DD/MM/YYYY HH:mm:ss"
           );
           const timeSincePublication = moment().diff(publicationDate, "days");
+          const imagensObj = JSON.parse(news.image_url);
+          const imageUrl = imagensObj.image_intro.replace(/\\/g, "");
+          const fullImageUrl = `https://agenciadenoticias.ibge.gov.br/${imageUrl}`;
 
           return (
             <div key={index} className={styles.newsCard}>
+              <div className={styles.imageContainer}>
+                <img
+                  src={fullImageUrl}
+                  alt={news.title}
+                  className={styles.newsImage}
+                />
+              </div>
               <h2>{news.title}</h2>
               <p>Publicado há {timeSincePublication} dias</p>
               <p>{news.description}</p>
@@ -69,7 +72,7 @@ function FavoriteSection() {
           );
         })}
       </div>
-      {data && data.items && visible < data.items.length && (
+      {favoriteNews.length >= 12 && visible < favoriteNews.length && (
         <button
           onClick={() => setVisible(visible + 12)}
           className={styles.showMoreButton}
