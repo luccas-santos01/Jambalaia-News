@@ -1,9 +1,21 @@
 .newsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  .newsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .newsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .newsCard {
@@ -14,6 +26,7 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin: auto;
 }
 
 .showMoreButton {
@@ -54,9 +67,40 @@
   font-weight: bold;
   color: white;
   transition: background-color 0.3s ease;
-  width: 20%;
+  align-self: flex-start;
 }
 
 .readNewsButton:hover {
   background-color: #0056b3;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+@media (min-width: 576px) {
+  .imageContainer {
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    height: 400px;
+  }
+}
+
+.newsImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

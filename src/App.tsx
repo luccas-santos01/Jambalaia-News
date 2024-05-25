@@ -7,7 +7,8 @@ import FavoriteSection from "./components/FavoriteSection/index.module";
 import NoticeSection from "./components/NoticeSection/index.module";
 import ReleaseSection from "./components/ReleaseSection/index.module";
 import SearchBar from "./components/SearchBar/index.module";
-import SearchedNews from './components/SearchedNews/index.module';
+import SearchedNews from "./components/SearchedNews/index.module";
+import TransitionBar from "./components/TransitionBar/index.module";
 import { useState } from "react";
 
 function App() {
@@ -16,6 +17,11 @@ function App() {
 
   const handleInputChange = (inputValue: string) => {
     setSearchValue(inputValue);
+  };
+
+  const handleButtonClick = (buttonName: string) => {
+    setActiveButton(buttonName);
+    setSearchValue("");
   };
 
   let content;
@@ -34,12 +40,13 @@ function App() {
   return (
     <div>
       <Header />
-      <LatestNews />
       <NavigationMenu
         activeButton={activeButton}
-        setActiveButton={setActiveButton}
+        setActiveButton={handleButtonClick}
       />
       <SearchBar onInputChange={handleInputChange} />
+      <LatestNews />
+      <TransitionBar activeButton={activeButton} />
       {content}
     </div>
   );

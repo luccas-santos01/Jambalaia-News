@@ -49,7 +49,7 @@ function LatestNews() {
           />
         </div>
         <div className={styles.textContainer}>
-          <h4>Notícia mais recente</h4>
+          <h3>Notícia mais recente</h3>
           <h2 className={styles.title}>{latestNews.titulo}</h2>
           <p>{timeSincePublication} dias atrás</p>
           <p>
