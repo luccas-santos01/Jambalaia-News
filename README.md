@@ -84,7 +84,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ## Instruções de Execução
 
-1. Clone o repositório: `git clone https://github.com/seu-usuario/seu-projeto.git`
+1. Clone o repositório: `git clone https://github.com/luccas-santos01/jambalaia-news.git`
 2. Instale as dependências: `npm install`
 3. Inicie o aplicativo: `npm run dev`
 
